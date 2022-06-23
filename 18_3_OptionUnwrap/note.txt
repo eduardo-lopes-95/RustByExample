@@ -1,0 +1,16 @@
+O que aconteceria se você esperasse um valor, porém recebesse um valor null ou vazio?
+Concorda comigo que, nesse cenário, temos duas opções: presença ou ausência de informação?
+Em Rust você pode usar um enum chamado Option<T> que tem as possibilidades: Some(T) ou None.
+Ainda nesse cenário, podemos solucionar esses casos de forma explicita ou implicita.
+Explicitamente falando, podemos resolver com o match pattern.
+Implicitamente falando, podemos resolver com o unwrap method.
+
+unwrap x expect
+Option com tipo Some ou Result com tipo Ok => o programa continua rodando 
+Option com tipo None ou Result com tipo Err => o programa apresenta panic!
+
+unwrap = usando para quando você precisa que o programa continue rodando,
+pode fazer via match (verboso) ou usar o unwrap.
+expect = é um aprefeiçoamento do unwrap com o objetivo de customizar
+a mensagem de crash - panic.
+
